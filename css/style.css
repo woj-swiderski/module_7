@@ -22,8 +22,96 @@ time, mark, audio, video {
 .jumbo {
   width: 1400px;
   height: 700px;
-  background-color: gray;
+  background-image: url("../img/jumbo_background.png");
+  background-color: rgba(0, 0, 0, 0.5);
   margin: 0 auto;
+}
+
+.bar {
+  width: 66.6%;
+  height: 28px;
+  display: block;
+  margin-left: 237px;
+  margin-top: 36px;
+}
+
+a {
+  text-decoration: none;
+}
+a:hover {
+  color: #34eefc;
+}
+
+nav {
+  overflow: auto;
+}
+nav .logo {
+  display: inline;
+  float: left;
+  font-family: "Great Vibes", cursive;
+  font-weight: bold;
+  color: #fed136;
+  font-size: 26px;
+  line-height: 41px;
+  text-align: left;
+}
+nav ul {
+  list-style-type: none;
+  font-family: "Montserrat", sans-serif;
+  color: #ffffff;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 41px;
+  float: right;
+}
+nav ul > li {
+  display: inline-block;
+  text-align: center;
+}
+nav ul > li > a {
+  color: whitesmoke;
+  text-transform: uppercase;
+  padding-left: 2rem;
+  display: block;
+  font-weight: bold;
+}
+nav h1 {
+  font-family: "Montserrat";
+  color: #ffffff;
+  font-size: 75px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -3px;
+  text-align: center;
+  margin-top: 30px;
+  width: 100%;
+}
+nav .welcome {
+  color: #ffffff;
+  font-size: 40px;
+  font-style: italic;
+  width: 100%;
+  margin-top: 205px;
+  text-align: center;
+  text-transform: capitalize;
+}
+nav .btn {
+  box-sizing: border-box;
+  display: block;
+  width: 240px;
+  border-radius: 3px;
+  height: 65px;
+  margin: 0 auto;
+  margin-top: 45px;
+  padding: 20px;
+  font-family: "Montserrat";
+  font-size: 18px;
+  font-weight: 700;
+  text-align: center;
+  vertical-align: middle;
+  text-transform: uppercase;
+  background-color: #fed136;
+  color: #ffffff;
 }
 
 /*# sourceMappingURL=style.css.map */
