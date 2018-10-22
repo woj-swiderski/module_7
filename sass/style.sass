@@ -7,21 +7,27 @@ $c_white: #ffffff
 $c_blue: #34eefc
 $c_flack: #222222
 $c_gray: #777777
+$c_5: #555555
+$c_input_text_color: #bbbbbb
+
 $main_font: 'Montserrat'
 
 h1
-    font-family: $main_font //, sans-serif
+    font-family: $main_font, sans-serif
     color: $c_white
     font-size: 75px
     font-weight: 700
+    font-stretched: condensed
     text-transform: uppercase
     letter-spacing: -3px
     text-align: center
     margin-top: 30px
     width: 100%
+    @media(max-width: 400px)
+        font-size: 50px
 
 h2
-    font-family: $main_font
+    font-family: $main_font, sans-serif
     font-weight: 700
     font-size: 40px
     line-height: 75px
@@ -36,7 +42,6 @@ h3
     color: $c_flack
     font-size: 18px
     font-weight: 700
-    line-height: 75px
     text-align: center
 
 h4
@@ -45,39 +50,67 @@ h4
     font-style: italic
     text-align: center
 
-.jumbo
-    width: $page_width
-    height: $jumbo_height
-    background-image: url('../img/jumbo_background.png')
-    background-color: rgba(0,0,0,0.5)
-    margin: 0 auto
-
-.bar
-    width: 66.6%
-    height: 28px
-    display: block
-    margin-left: 237px
-    margin-top: 36px
-
 a
     color: whitesmoke
     text-decoration: none
     &:hover
         color: $c_blue
 
+.jumbo
+    max-width: $page_width
+    display: block
+    height: $jumbo_height
+    background-image: url('../img/jumbo_background.png')
+    background-size: cover
+    background-color: rgba(0,0,0,0.5)
+    margin: 0 auto
+
+.bar
+    max-width: 66.6%
+    height: 28px
+    display: block
+    margin-left: 237px
+    margin-top: 36px
+
+.small_container
+    max-width: 0.677 * $page_width
+    justify-content: center
+    margin: 0 auto
+
+.btn
+    box-sizing: border-box
+    display: block
+    width: 240px
+    border-radius: 3px
+    height: 65px
+    margin: 0 auto
+    margin-top: 45px
+    padding: 20px
+    font-family: $main_font
+    font-size: 18px
+    font-weight: 700
+    text-align: center
+    vertical-align: middle
+    text-transform: uppercase
+    background-color: $c_gold
+    color: $c_white
+
 .three_items
     margin-top: 50px
     display: flex
-    flex: 1
+    flex-flow: row wrap
     justify-content: space-between
 
     .item
-        //display: flex
         text-align: center
         font-size: 14px
         color: $c_gray
         font-weight: 400
-        width: 30%
+        width: 300px // 30%
+        margin: auto // was not set
+
+        h3
+            line-height: 75px
 
     i
         font-size: 2em
@@ -88,7 +121,7 @@ a
         margin: 0 auto
         margin-bottom: -1em
 
-        &:after
+        &::after
             content: ""
             position: relative
             top: -1.8em
@@ -100,6 +133,21 @@ a
             width: inherit
             height: inherit
 
+.one_item
+    display: flex
+    flex: 1
+    justify-content: center
+
+.round
+    height: 169px
+    width: 169px
+    display: block
+    border-radius: 50%
+    background-color: $c_gold
+    color: $c_white
+    h3
+        padding-top: 0.5em
+        color: $c_white
 
 nav
     overflow: auto
@@ -113,6 +161,8 @@ nav
         font-size: 26px
         line-height: 41px
         text-align: left
+        @media (max-width: 400px)
+            display: none
 
     ul
         list-style-type: none
@@ -142,31 +192,240 @@ nav
         text-align: center
         text-transform: capitalize
 
-    .btn
-        box-sizing: border-box
-        display: block
-        width: 240px
-        border-radius: 3px
-        height: 65px
-        margin: 0 auto
-        margin-top: 45px
-        padding: 20px
-        font-family: $main_font
-        font-size: 18px
-        font-weight: 700
-        text-align: center
-        vertical-align: middle
-        text-transform: uppercase
-        background-color: $c_gold
-        color: $c_white
-
 .services
-    width: 0.667 * $page_width
+    max-width: 0.667 * $page_width
     margin: 0 auto
     margin-top: 100px
 
-
-
 .portfolio
-    width: $page_width
-    border: 1px solid black
+    max-width: $page_width
+    margin: 0 auto
+    margin-top: 100px
+    p
+        text-transform: capitalize
+        font-style: italic
+        margin-top: -1.7em
+
+.amazing_team
+    max-width: $page_width
+    margin: 0 auto
+    margin-top: 160px
+
+    p
+        margin-top: -1.1em
+        margin-bottom: 1.5em
+
+    > .small_container > p
+        width: 70%
+        display: block
+        margin: 0 auto
+        text-align: center
+        line-height: 150%
+        color: $c_gray
+        font-size: 14px
+
+    img
+        width: 220px
+        height: 220px
+        border-radius: 50%
+
+    i
+        font-size: 20px
+        display: inline-block
+        color: $c_flack
+        height: 2em
+        width: 2em
+        padding-left: 10px
+        //border-radius: 50%
+        margin: 0 auto
+
+
+        &::after
+            content: ""
+            position: relative
+            top: -32px
+            left: -3px
+            border-radius: 50%
+            border: 3px solid $c_flack
+            display: inline-block
+            z-order: 1
+            width: inherit
+            height: inherit
+
+        &:hover &::after
+            color: $c_white
+            background-color: red
+
+
+.about_us
+    max-width: $page_width
+    margin: 0 auto
+    margin-top: 150px
+
+    img
+        width: 169px
+        height: 169px
+        margin: 0 30px
+        //display: inline-block
+
+    .left
+        text-align: right
+        max-width: (0.667*$page_width - 169px - 46px)/2
+
+    .right
+        text-align: left
+        max-width: (0.667*$page_width - 169px - 46px)/2
+
+    h3
+        line-height: 30px
+        text-align: center
+
+    h4
+        margin-bottom: 3em
+
+    .caps
+        text-transform: capitalize
+
+    p
+        font-size: 14px
+        color: $c_gray
+        padding-top: 6px
+        line-height: 180%
+
+    .two_items_left
+        display: flex
+        flex: 1
+        justify-content: flex-start
+        h3
+            text-align: right
+
+    .two_items_right
+        display: flex
+        flex: 1
+        justify-content: flex-end
+        h3
+            text-align: left
+
+        img
+            order: -1
+
+.logos
+    margin-top: 4em
+    margin-bottom: 4em
+    display: flex
+    flex: 1
+    flex-flow: row wrap
+    justify-content: space-evenly
+    align-items: center
+    @media (max-width: 400px)
+        display: none
+
+.contact
+    max-width: $page_width
+    height: 600px
+    margin: 0 auto
+    background-color: $c_flack
+    background-image: url('../img/Map.png')
+    background-position: 100% -70%
+    background-repeat: no-repeat
+    @media (max-width: 500px)
+        display: none
+
+    h2
+        color: $c_white
+
+    h4
+        margin-bottom: 4em
+
+    form
+        width: 100%
+        display: flex
+        flex: 1
+        justify-content: space-between
+
+    input, textarea
+        width: 100%// 455px
+        background-color: $c_white
+        color: $c_input_text_color
+        font-size: 14px
+        font-family: $main_font
+        text-align: left
+        border: none
+
+    .left_part
+        width: 48%
+        display: block
+        margin: 0 auto
+        margin-right: 2%
+
+
+        input
+            height: 50px
+            margin-bottom: 27px
+
+        input:last-child
+            margin-bottom: 0
+
+    .right_part
+        width: 48%
+        display: block
+        margin: 0 auto
+        margin-left: 2%
+
+        textarea
+            height: 210px
+
+    .btn
+        border: none
+
+
+footer
+    max-width: $page-width
+    display: block
+    height: 60px
+    margin: 0 auto
+    margin-top: 20px
+
+    .footer_content
+        max-width: 565px
+        margin-left: 210px
+        display: flex
+        flex: 1
+        justify-content: space-between
+        flex-flow: row wrap
+        @media(max-width: 767px)
+            margin-left: 0
+            justify-content: center
+
+    .copyright
+        font-size: 14px
+        font-family: $main_font
+        color: $c_5
+        line-height: 22px
+        margin-left: 0 auto
+        @media(max-width: 500px)
+            display: none
+
+
+    i
+        font-size: 20px
+        display: inline-block
+        color: $c_flack
+        height: 30px
+        width: 30px
+        padding-left: 10px
+        border-radius: 50%
+        margin: 0 auto
+        z-order: 1
+
+        &::after
+            content: ""
+            position: relative
+            top: -26px
+            left: -8px
+            border-radius: 50%
+            border: 3px solid $c_flack
+            display: inline-block
+            z-order: -1
+            width: inherit
+            height: inherit
