@@ -230,31 +230,18 @@ nav
         border-radius: 50%
 
     i
-        font-size: 20px
-        display: inline-block
         color: $c_flack
-        height: 2em
-        width: 2em
-        padding-left: 10px
-        //border-radius: 50%
-        margin: 0 auto
-
-
+        font-size: inherit
+        position: relative
+        left: 0
+        top: 5px
         &::after
-            content: ""
-            position: relative
-            top: -32px
-            left: -3px
-            border-radius: 50%
-            border: 3px solid $c_flack
-            display: inline-block
-            z-order: 1
-            width: inherit
-            height: inherit
+            border: none
 
-        &:hover &::after
-            color: $c_white
-            background-color: red
+    a
+        color: inherit
+        &:hover
+            color: inherit
 
 
 .about_us
@@ -406,26 +393,35 @@ footer
         @media(max-width: 500px)
             display: none
 
-
     i
-        font-size: 20px
-        display: inline-block
-        color: $c_flack
-        height: 30px
-        width: 30px
-        padding-left: 10px
-        border-radius: 50%
-        margin: 0 auto
-        z-order: 1
+        position: relative
+        left: 8px
+        top: 5px
 
-        &::after
-            content: ""
-            position: relative
-            top: -26px
-            left: -8px
-            border-radius: 50%
-            border: 3px solid $c_flack
-            display: inline-block
-            z-order: -1
-            width: inherit
-            height: inherit
+    a
+        color: inherit
+        &:hover
+            color: inherit
+
+@mixin icon($width, $bgcolor)
+    display: inline-block
+    border: 2px solid black
+    //background-color: transparent
+    border-radius: 50%
+    height: $width
+    width: $width
+    z-index: -1
+    &:hover
+        background-color: $bgcolor
+
+.fb
+    @include icon(30px, #1E90FF)
+
+.tw
+    @include icon(30px, #6CB7FF)
+
+.pt
+    @include icon(30px, #FFA500)
+
+.gp
+    @include icon(30px, #FF00EA)
