@@ -265,7 +265,7 @@ nav .welcome {
   color: #222222;
   font-size: inherit;
   position: relative;
-  left: 0;
+  left: -2px;
   top: 5px;
 }
 .amazing_team i::after {
