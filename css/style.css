@@ -150,7 +150,7 @@ a:hover {
   border-radius: 50%;
   border: 3px solid #fed136;
   display: inline-block;
-  z-order: 1;
+  z-index: 1;
   width: inherit;
   height: inherit;
 }
@@ -242,6 +242,7 @@ nav .welcome {
   max-width: 1400px;
   margin: 0 auto;
   margin-top: 160px;
+  object-fit: cover;
 }
 .amazing_team p {
   margin-top: -1.1em;
@@ -283,10 +284,25 @@ nav .welcome {
   margin: 0 auto;
   margin-top: 150px;
 }
+.about_us .img_container {
+  width: 169px;
+  height: 263px;
+  margin: 0 30px;
+}
+.about_us .img_container:after {
+  position: relative;
+  content: "";
+  background-color: #f1f1f1;
+  top: -4px;
+  left: 85px;
+  width: 3px;
+  height: 94px;
+  display: block;
+  clear: right;
+}
 .about_us img {
   width: 169px;
   height: 169px;
-  margin: 0 30px;
 }
 .about_us .left {
   text-align: right;
@@ -299,6 +315,8 @@ nav .welcome {
 .about_us h3 {
   line-height: 30px;
   text-align: center;
+  white-space: pre;
+  padding-top: 30px;
 }
 .about_us h4 {
   margin-bottom: 3em;
@@ -328,7 +346,7 @@ nav .welcome {
 .about_us .two_items_right h3 {
   text-align: left;
 }
-.about_us .two_items_right img {
+.about_us .two_items_right .img_container {
   order: -1;
 }
 

@@ -7,6 +7,7 @@ $c_white: #ffffff
 $c_blue: #34eefc
 $c_flack: #222222
 $c_gray: #777777
+$c_light_gray: #f1f1f1
 $c_5: #555555
 $c_input_text_color: #bbbbbb
 
@@ -129,7 +130,7 @@ a
             border-radius: 50%
             border: 3px solid $c_gold
             display: inline-block
-            z-order: 1
+            z-index: 1
             width: inherit
             height: inherit
 
@@ -210,6 +211,7 @@ nav
     max-width: $page_width
     margin: 0 auto
     margin-top: 160px
+    object-fit: cover
 
     p
         margin-top: -1.1em
@@ -249,10 +251,26 @@ nav
     margin: 0 auto
     margin-top: 150px
 
+
+    .img_container
+        width: 169px
+        height: ( 169px + 94px )
+        margin: 0 30px
+        &:after
+            position: relative
+            content: ""
+            background-color: $c_light_gray
+            top: -4px
+            left: 85px
+            width: 3px
+            height: 94px
+            display: block
+            clear: right
+
     img
         width: 169px
         height: 169px
-        margin: 0 30px
+        //margin: 0 30px
         //display: inline-block
 
     .left
@@ -266,6 +284,8 @@ nav
     h3
         line-height: 30px
         text-align: center
+        white-space: pre
+        padding-top: 30px
 
     h4
         margin-bottom: 3em
@@ -293,7 +313,10 @@ nav
         h3
             text-align: left
 
-        img
+        //img
+        //    order: -1
+
+        .img_container
             order: -1
 
 .logos
